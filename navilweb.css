@@ -54,7 +54,19 @@ header {
 .barra a:hover {
   color: #ff8a00;
 }
+.submenu {
+    display: none;       /* oculto por defecto */
+    position: absolute;  /* para que se superponga */
+    list-style: none;
+    padding: 10px;
+  
+    margin-top: 5px;
+}
 
+/* Mostrar submenú al pasar el ratón por el li padre */
+.barra li:hover .submenu {
+    display: block;
+}
 /* Contenido: imagen a la izquierda, artículo a la derecha */
 .contenido {
   grid-area: contenido;
