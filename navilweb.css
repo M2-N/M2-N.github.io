@@ -1,0 +1,89 @@
+/* Contenedor principal con Grid */
+.contenedor {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "nav"
+    "contenido"
+    "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 15px;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  background-color: #1c1c1c; /* gris oscuro / negro */
+  color: #eee; /* texto claro para contraste */
+}
+
+/* Header grande */
+header {
+  grid-area: header;
+  background: linear-gradient(135deg, #444, #111); /* gradiente gris oscuro */
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+/* Barra de navegación */
+.barra {
+  grid-area: nav;
+  background-color: #333;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.barra ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.barra a {
+  text-decoration: none;
+  color: #eee;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.barra a:hover {
+  color: #ff8a00;
+}
+
+/* Contenido: imagen a la izquierda, artículo a la derecha */
+.contenido {
+  grid-area: contenido;
+  display: grid;
+  grid-template-columns: 150px 1fr; /* imagen más pequeña, artículo más ancho */
+  gap: 20px;
+  align-items: start;
+}
+
+/* Footer */
+footer {
+  grid-area: footer;
+  background: linear-gradient(135deg, #333, #111);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+}
+
+/* Responsive: apilar en pantallas pequeñas */
+@media (max-width: 768px) {
+  .contenido {
+    grid-template-columns: 1fr; /* imagen arriba, artículo debajo */
+  }
+
+
+  .barra ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
