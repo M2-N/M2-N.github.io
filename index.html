@@ -12,31 +12,34 @@
     <section>
 
          <nav class="barra">
+            <div>
         <ul>
             <li><a href="Inicio" > Inicio</a></li>
-            <li><a href="Mis proyecto">Mis proyectos</a>
-                <ul class="submenu">
-                    <li><a href="java/Basico">Java</a></li>
-                </ul>
+            <li><a href="#proyectos">Mis proyectos</a>
             </li>
              <li><a href="formulario.html">Mi contacto</a></li>
         </ul>
-    
+            </div>
         
     </nav>
  
 
-    <aside>
+    <aside id="informacionProyectos">
+        <input type="checkbox" id="toggleProyectos" hidden>
+           <label for="toggleProyectos" class="btn-toggle">Proyectos</label>
+   
+        <div id="proyectos">
+          
+            <ul class="java">
+                <li><a href="https://github.com/M2-N/M2-N.github.io/tree/main/Java/Basico" target="_blank">Java</a></li>
+                <li><a href="https://github.com/M2-N/M2-N.github.io/tree/main/java/avanzado/Hibernate/hibernate.maven.oracle"target="_blank">Hibernate</a></li>
+            </ul>
+
+        </div>
            
     </aside>
      <article>
-        <div class="redessociales">
-
-           <ul>
-            <li> <a href="" >Faceebook</a></li>
-            <li> <a href="" >Instagram</a></li>
-           </ul>
-        </div>
+      
 
      </article>
     
@@ -48,7 +51,27 @@
 
 
     <footer>
-        Realizado por  NAvil 
+          
+                  
+            
+            <div id="contacto">
+                <cite> Navil Lugo Taveras</cite>
+                <address>Alcala de Henares</address>
+                <small> & copy ; Derechos Reservados 2022</small>
+            </div>
+
+
+              <div class="redessociales">
+
+           <ul>
+            <li> <a href="" >Faceebook</a></li>
+            <li> <a href="" >Instagram</a></li>
+           </ul>
+        </div>
+            
+
+        
+
     </footer>
 </body>
 </html>
