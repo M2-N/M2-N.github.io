@@ -121,17 +121,24 @@ list-style-type: none;
 #toggleProyectos:checked + .btn-toggle + #proyectos {
     display: block;
 }
+.barra {
+    z-index: 10; /* lo pone por encima */
+    position: relative; /* necesario para que z-index funcione */
+}
+
 
 
 /* Responsive: apilar en pantallas pequeñas */
 @media (max-width: 768px) {
-  .contenido {
-    grid-template-columns: 1fr; /* imagen arriba, artículo debajo */
+  .btn-toggle {
+    padding: 20px 30px; /* mucho más pequeño para móviles */
+    font-size: 16px;    /* ajusta el tamaño de la letra */
   }
-
 
   .barra ul {
     flex-direction: column;
     gap: 10px;
   }
 }
+
+
