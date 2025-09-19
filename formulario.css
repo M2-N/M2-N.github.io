@@ -32,6 +32,17 @@ form {
     width: 90%;
 }
 
+#btnenviar{
+    border-radius:40px;
+    background-color:burlywood;
+    padding: 30px 40px;
+    display: block;          /* el botón ocupa una línea entera */
+    margin: 0 auto; 
+   
+
+}
+
+
 /* Labels */
 form label {
     font-weight: bold;
@@ -49,22 +60,41 @@ form input[type="password"] {
     box-sizing: border-box;
 }
 
-/* Botón */
-form input[type="submit"] {
-    padding: 12px;
-    border-radius: 5px;
-    border: none;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s;
+fieldset{
+  
+    color: whitesmoke;
+    border: 2px solid rgb(192,192,192);
+   
+  
+  
+}
+legend{
+  
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+
+}
+legend::first-letter{
+    font-size: 2em;
+    color: rgb(239,184,16);
+
+}
+ul {
+    list-style-type: none;
+}
+li{
+    padding: 0.75em;
+    text-align: left;
+
 }
 
-form input[type="submit"]:hover {
-    background: linear-gradient(135deg, #2575fc, #6a11cb);
-}
 
+
+
+footer > p {
+    text-align: center;
+    color: rgb(239,184,16);
+}
 /* Para que el formulario se vea centrado en móviles */
 @media (max-width: 500px) {
     form {
