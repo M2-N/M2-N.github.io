@@ -1,144 +1,147 @@
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1c1c1c;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #eee;
+}
+
 /* Contenedor principal con Grid */
-
-.contenedor {
-  display: grid;
-  grid-template-areas:
-    "header"
-    "nav"
-    "contenido"
-    "footer";
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto 1fr auto;
-  gap: 15px;
-  padding: 10px;
-  font-family: Arial, Helvetica, sans-serif;
-  min-height: 100vh;
-  background-color: #1c1c1c; /* gris oscuro / negro */
-  color: #eee; /* texto claro para contraste */
+.contenido {
+    display: grid;
+    grid-template-areas:
+        "nav"
+        "contenido"
+        "aside"
+        "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto auto;
+    gap: 15px;
+    padding: 10px;
+    min-height: 100vh;
 }
 
-
-/* Header grande */
-header {
-  grid-area: header;
-  background: linear-gradient(135deg, #444, #111); /* gradiente gris oscuro */
-  color: white;
-  font-size: 40px;
-  text-align: center;
-  padding: 40px 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-}
-
-/* Barra de navegación */
-
-
-.barra{
-   display: flex;
+/* Navbar moderna */
+.barra {
+    grid-area: nav;
+    display: flex;
     justify-content: center;
-    width: 96%;
-    height: 50px;
-    padding: 0% 2%;
+    width: 100%;
+    background-color: #9fc8d9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    height: 100px;
+    align-items: center;
+    padding: 0 20px;
 }
 
 .barra ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: 20px;
+    display: flex;
+    list-style: none;
+    gap: 30px;
 }
 
-.barra a {
-  
-    font: bold 18px arial sans-serif;
-    color:#333333;
+.barra li a {
+    font: bold 22px Arial, sans-serif;
+    color: #333;
     text-decoration: none;
-  
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
-.barra a:hover {
-  color: #ff8a00;
+.barra li a:hover {
+    background-color: #6facc6;
+    color: white;
+    transform: scale(1.05);
 }
 
-
-
-/* Mostrar submenú al pasar el ratón por el li padre */
-.barra li:hover .submenu {
-    display: block;
-}
-/* Contenido: imagen a la izquierda, artículo a la derecha */
+/* Contenido principal */
 .contenido {
-  grid-area: contenido;
-  display: grid;
-  grid-template-columns: 150px 1fr; /* imagen más pequeña, artículo más ancho */
-  gap: 20px;
-  align-items: start;
+    grid-area: contenido;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 20px;
+    align-items: start;
 }
 
-/* Footer */
-footer {
-  grid-area: footer;
-  background: linear-gradient(135deg, #333, #111);
-  color: white;
-  text-align: center;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+/* Figura con imagen centrada y tamaño limitado */
+figure {
+    text-align: center;
+    margin: 20px 0;
 }
 
+figure img {
+    width: 100%;
+    max-width: 600px; /* limita el tamaño */
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
 
-/* Lista oculta por defecto */
+/* Botón de proyectos moderno */
+.btn-toggle {
+    display: inline-block;
+    background-color: #4c5eaf;
+    color: white;
+    padding: 20px 40px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin: 20px 0;
+}
 
+.btn-toggle:hover {
+    background-color: #a04589;
+    transform: scale(1.05);
+}
+
+/* Lista de proyectos oculta */
 #proyectos {
     display: none;
     margin-top: 10px;
 }
 
-.java{
-list-style-type: none;
-
-}
-
-/* Estilo del label como botón */
-.btn-toggle {
-    display: inline-block;
-    
-    background-color: #4c5eaf;
-    color: white;
-    padding: 150px 60px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-/* Hover del "botón" */
-.btn-toggle:hover {
-    background-color: #a04589;
-}
-
-/* Mostrar lista cuando el checkbox esté marcado */
 #toggleProyectos:checked + .btn-toggle + #proyectos {
     display: block;
 }
-.barra {
-    z-index: 10; /* lo pone por encima */
-    position: relative; /* necesario para que z-index funcione */
+
+/* Footer */
+footer {
+    grid-area: footer;
+    background: linear-gradient(135deg, #333, #111);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
 }
 
 
-
-/* Responsive: apilar en pantallas pequeñas */
+/* Responsive */
 @media (max-width: 768px) {
-  .btn-toggle {
-    padding: 20px 30px; /* mucho más pequeño para móviles */
-    font-size: 16px;    /* ajusta el tamaño de la letra */
-  }
+    .barra ul {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .contenido {
+        grid-template-columns: 1fr;
+    }
 
-  .barra ul {
-    flex-direction: column;
-    gap: 10px;
-  }
+    .btn-toggle {
+        padding: 15px 25px;
+        font-size: 16px;
+    }
+
+    figure img {
+        max-width: 90%;
+    }
 }
-
-
