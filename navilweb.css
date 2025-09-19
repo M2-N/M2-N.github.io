@@ -1,4 +1,5 @@
 /* Contenedor principal con Grid */
+
 .contenedor {
   display: grid;
   grid-template-areas:
@@ -16,6 +17,7 @@
   color: #eee; /* texto claro para contraste */
 }
 
+
 /* Header grande */
 header {
   grid-area: header;
@@ -29,11 +31,14 @@ header {
 }
 
 /* Barra de navegación */
-.barra {
-  grid-area: nav;
-  background-color: #333;
-  padding: 15px;
-  border-radius: 8px;
+
+
+.barra{
+   display: flex;
+    justify-content: center;
+    width: 96%;
+    height: 50px;
+    padding: 0% 2%;
 }
 
 .barra ul {
@@ -45,23 +50,18 @@ header {
 }
 
 .barra a {
-  text-decoration: none;
-  color: #eee;
-  font-weight: bold;
-  transition: color 0.3s;
+  
+    font: bold 18px arial sans-serif;
+    color:#333333;
+    text-decoration: none;
+  
 }
 
 .barra a:hover {
   color: #ff8a00;
 }
-.submenu {
-    display: none;       /* oculto por defecto */
-    position: absolute;  /* para que se superponga */
-    list-style: none;
-    padding: 10px;
-  
-    margin-top: 5px;
-}
+
+
 
 /* Mostrar submenú al pasar el ratón por el li padre */
 .barra li:hover .submenu {
@@ -86,6 +86,42 @@ footer {
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.5);
 }
+
+
+/* Lista oculta por defecto */
+
+#proyectos {
+    display: none;
+    margin-top: 10px;
+}
+
+.java{
+list-style-type: none;
+
+}
+
+/* Estilo del label como botón */
+.btn-toggle {
+    display: inline-block;
+    
+    background-color: #4c5eaf;
+    color: white;
+    padding: 150px 60px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Hover del "botón" */
+.btn-toggle:hover {
+    background-color: #a04589;
+}
+
+/* Mostrar lista cuando el checkbox esté marcado */
+#toggleProyectos:checked + .btn-toggle + #proyectos {
+    display: block;
+}
+
 
 /* Responsive: apilar en pantallas pequeñas */
 @media (max-width: 768px) {
